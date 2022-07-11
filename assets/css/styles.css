@@ -1,0 +1,836 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* CSS VARIABLES */
+:root {
+  --primaryColor: rgb(236, 101, 11);
+  --lightPrimaryColor: #c25b20;
+}
+/* // CSS VARIABLES */
+
+/* Utilities */
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.text-primary {
+  color: var(--primaryColor);
+}
+.text-center {
+  text-align: center;
+}
+.lead {
+  font-size: 2rem;
+}
+.sm {
+  font-size: 1rem;
+}
+.lg {
+  font-size: 3rem;
+}
+.xlg {
+  font-size: 4rem;
+}
+
+/*Margin*/
+.my-1 {
+  margin: 1rem 0;
+}
+.my-2 {
+  margin: 1.5rem 0;
+}
+.my-3 {
+  margin: 2rem 0;
+}
+.my-4 {
+  margin: 3rem 0;
+}
+.my-5 {
+  margin: 4rem 0;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+.mt-2 {
+  margin-top: 1.5rem;
+}
+.mt-3 {
+  margin-top: 2rem;
+}
+.mt-4 {
+  margin-top: 3rem;
+}
+.mt-5 {
+  margin-top: 4rem;
+}
+
+.mx-1 {
+  margin: 0 1rem;
+}
+.mx-2 {
+  margin: 0 1.5rem;
+}
+.mx-3 {
+  margin: 0 2rem;
+}
+.mx-4 {
+  margin: 0 3rem;
+}
+.mx-5 {
+  margin: 0 4rem;
+}
+.mx-auto {
+  margin: 0 auto;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+.m-2 {
+  margin: 1.5rem;
+}
+.m-3 {
+  margin: 2rem;
+}
+.m-4 {
+  margin: 3rem;
+}
+.m-5 {
+  margin: 4rem;
+}
+.ml-1 {
+  margin-left: 1rem;
+}
+.ml-2 {
+  margin-left: 2rem;
+}
+.ml-3 {
+  margin-left: 3rem;
+}
+.ml-4 {
+  margin-left: 4rem;
+}
+
+/*padding*/
+
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 1.5rem 0;
+}
+.py-3 {
+  padding: 2rem 0;
+}
+.py-4 {
+  padding: 3rem 0;
+}
+.py-5 {
+  padding: 4rem 0;
+}
+
+.px-1 {
+  padding: 0 1rem;
+}
+.px-2 {
+  padding: 0 1.5rem;
+}
+.px-3 {
+  padding: 0 2rem;
+}
+.px-4 {
+  padding: 0 3rem;
+}
+.px-5 {
+  padding: 0 4rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+.p-2 {
+  padding: 1.5rem;
+}
+.p-3 {
+  padding: 2rem;
+}
+.p-4 {
+  padding: 3rem;
+}
+.p-5 {
+  padding: 4rem;
+}
+
+/* Text-spacing */
+.text-spacing-1 {
+  line-height: 1;
+}
+.text-spacing-2 {
+  line-height: 2;
+}
+.text-spacing-3 {
+  line-height: 3;
+}
+
+/* Width sizes */
+.w-50 {
+  width: 50vh;
+}
+/* // Utilities */
+
+@font-face {
+  font-family: Poppins-regular;
+  src: url("../fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: Poppins-bold;
+  src: url("../fonts/Poppins-Bold.ttf");
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+ul {
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  font-family: Poppins-regular, sans-serif;
+}
+
+/* Buttons */
+button {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+/* End of Button styling */
+
+/* Header styling */
+header {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(19, 37, 48, 1) 20%,
+      rgba(19, 37, 48, 0.8) 40%,
+      rgba(19, 37, 48, 0.6) 60%,
+      rgba(19, 37, 48, 0.4) 80%,
+      rgba(19, 37, 48, 1) 100%
+    ),
+    url("../images/bg1.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3rem 2rem;
+}
+header nav #site-title {
+  color: #fff;
+  font-size: 3rem;
+  font-family: Poppins-bold, sans-serif;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  margin-left: 1rem;
+  font-size: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+header nav ul li a {
+  color: #fff;
+  text-shadow: 3px 3px 5px var(--primary-color);
+  transition: color 500ms ease-in-out;
+  text-transform: uppercase;
+}
+header nav ul li a:hover {
+  color: var(--primaryColor);
+}
+header nav ul li a::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+header nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+header nav ul li .sub-menu {
+  border-top: 3px solid var(--primaryColor);
+  background-color: #fff;
+  width: max-content;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  flex-direction: column;
+  margin-top: 1rem;
+  z-index: 88888;
+  display: none;
+}
+header nav ul li .sub-menu li {
+  padding: 1rem;
+}
+header nav ul li .sub-menu li a {
+  color: #000;
+}
+header nav ul li .sub-menu li a:hover {
+  color: var(--primaryColor);
+}
+.hasMenu:hover .sub-menu {
+  display: block;
+}
+#bar {
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.header-content {
+  width: 80%;
+  margin-top: 6rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header-content h1 {
+  font-size: 4rem;
+  color: #fff;
+  font-family: Poppins-bold, sans-serif;
+}
+.header-content p {
+  font-size: 2rem;
+  color: rgb(177, 171, 171);
+}
+
+.search-container {
+  margin-top: 1rem;
+  display: flex;
+}
+
+.header-content .search-container input {
+  width: 20rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.header-content .search-container button {
+  background-color: var(--primaryColor);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+  transition: background-property 500ms ease-in-out;
+}
+.header-content .search-container button:hover {
+  background-color: var(--lightPrimaryColor);
+}
+/* End of Header styling */
+
+/* To be dynamically added in javascript*/
+#nav-scrolled {
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 333;
+  padding: 0 5rem;
+  transition: 500ms ease-in-out;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
+}
+#nav-scrolled a,
+#nav-scrolled #site-title,
+#nav-scrolled #bar {
+  color: #000;
+}
+
+/* Styling for aside */
+aside {
+  width: 40%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  transform: translateX(100%);
+  transition: transform 500ms ease-in-out;
+  z-index: 1000;
+}
+aside #closeSideBar {
+  font-size: 2rem;
+  float: right;
+  margin-right: 2rem;
+  padding: 2rem;
+  cursor: pointer;
+}
+aside #closeSideBar:hover {
+  color: var(--primaryColor);
+}
+aside a {
+  color: #000;
+}
+aside nav {
+  margin-top: 4rem;
+  padding: 2rem;
+}
+aside nav ul li {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+aside nav ul li a:hover {
+  color: var(--primaryColor);
+}
+/* End of styling for aside */
+
+/* Stylings for main contents*/
+main {
+  min-height: 100vh;
+}
+
+main #aboutUs {
+  padding: 3rem 2rem;
+  width: 100%;
+}
+.about-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primaryColor);
+  font-family: Poppins-bold, sans-serif;
+  margin-bottom: 2rem;
+  position: relative;
+  text-transform: uppercase;
+}
+.about-title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  width: 5%;
+  height: 5px;
+  transform: translateX(-50%);
+  transform-origin: center;
+  background-color: var(--primaryColor);
+}
+
+main #aboutUs .grid {
+  width: 100%;
+  padding: 0 2rem;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  grid-auto-rows: minmax(300px, 100%);
+}
+
+main #aboutUs .aboutUs-text h3 {
+  color: var(--primaryColor);
+  font-size: 2rem;
+  margin-top: 1.2rem;
+}
+
+main #aboutUs .aboutUs-text p {
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 2;
+}
+.fa-check-square {
+  color: #0ab35e;
+  padding-right: 1rem;
+}
+main #aboutUs .aboutUs-image img {
+  width: 100%;
+  height: 500px;
+}
+
+main #hiw {
+  min-height: 100vh;
+  background: url("../images/delivery_guy.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blend-mode: darken;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 2rem;
+}
+main #hiw .grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+main #hiw .number {
+  background-color: var(--primaryColor);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #fff;
+}
+main #hiw .child h5 {
+  color: var(--primaryColor);
+  font-size: 2rem;
+  margin-top: 1.2rem;
+}
+
+main #hiw .child p {
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 2;
+}
+
+main #ourTeam {
+  width: 80%;
+  margin-inline: auto;
+  padding: 2rem;
+}
+#ourTeam .grid {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+#ourTeam .member-image-container {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid var(--primaryColor);
+}
+#ourTeam .member-image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+#services .grid-3 {
+  width: 80%;
+  gap: 2rem;
+}
+#services .icon {
+  transform: rotate(300deg);
+}
+#services .fas {
+  padding-right: 1rem;
+}
+.child-header {
+  width: max-content;
+}
+
+#cto {
+  width: 100%;
+  height: 70vh;
+  background: url("../images/cargos.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.75);
+  background-blend-mode: darken;
+  color: #fff;
+  text-align: center;
+  display: grid;
+  place-content: center;
+}
+#cto p {
+  width: 50vw;
+  line-height: 1.5;
+}
+
+#testimonials .flex {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+#testimonials .flex figure,
+#testimonials .flex figure img {
+  width: 200px;
+  height: 200px;
+}
+#testimonials .flex figure img {
+  border-radius: 50%;
+  border: 2px solid red;
+}
+
+main #contactUs {
+  width: 80%;
+  margin-inline: auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+main #contactUs .grid {
+  gap: 1rem;
+}
+main #contactUs .grid .form-container .grid {
+  gap: 1rem;
+}
+.form-container .form__group {
+  width: 100%;
+  margin-top: 2rem;
+}
+.form-container .form__group label {
+  display: block;
+  padding: 10px 0;
+}
+.form-container .form__group input {
+  width: 100%;
+  border: none;
+  border: 1px solid grey;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+.form-container textarea {
+  width: 100%;
+  border: 1px solid grey;
+}
+.form-container .btn {
+  display: block;
+  border: none;
+  background-color: var(--primaryColor);
+  padding: 10px;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.other-contact-info {
+  margin-top: 2rem;
+}
+
+footer {
+  width: 100%;
+  margin-top: 3rem;
+  background: linear-gradient(45deg, rgb(0, 0, 0), rgb(82, 68, 68));
+  color: #fff;
+  padding: 2rem;
+}
+footer a {
+  color: #fff;
+}
+footer a:where(:hover) {
+  color: var(--primaryColor);
+}
+footer .grid {
+  gap: 2rem;
+  padding-bottom: 5rem;
+}
+footer .footer-bottom {
+  width: 60%;
+  margin-inline: auto;
+  border-top: 1px solid #fff;
+  padding-top: 1rem;
+}
+
+/* track page */
+main .search-container {
+  width: 80%;
+  margin-top: 8rem;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .search-container .search-form label {
+  display: block;
+}
+main .search-container .search-form input {
+  border: none;
+  border: 1px solid grey;
+  width: 30rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+main .search-container .search-form button {
+  display: block;
+  background-color: var(--primaryColor);
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  transition: background-property 500ms ease-in-out;
+}
+main .search-container button:hover {
+  background-color: var(--lightPrimaryColor);
+}
+/* end of track page*/
+/* Stylings for main contents*/
+
+/* Media queries */
+@media (max-width: 1018px) {
+  #services .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 1000px) {
+  header nav ul {
+    display: none;
+  }
+  #bar {
+    display: block;
+    transition: color 500ms ease-in;
+  }
+  #bar:hover {
+    color: var(--primaryColor);
+  }
+}
+@media (max-width: 900px) {
+  main #aboutUs .aboutUs-image img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 760px) {
+  main #aboutUs .grid,
+  main #hiw .grid,
+  main #ourTeam .grid,
+  main #services .grid,
+  main #contactUs .grid,
+  footer .grid {
+    grid-template-columns: 1fr;
+  }
+  main #aboutUs .aboutUs-image img {
+    height: 500px;
+  }
+
+  main #cto {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    background-position: center;
+  }
+  header nav {
+    justify-content: space-between;
+  }
+  .header-content h1 {
+    font-size: 3rem;
+  }
+  .header-content p {
+    font-size: 1.5rem;
+  }
+
+  .header-content .search-container input {
+    width: 15rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+  }
+  .header-content .search-container button {
+    font-size: 1.2rem;
+  }
+
+  aside {
+    width: 70%;
+  }
+  .about-title {
+    font-size: 2rem;
+  }
+  .about-title::after {
+    width: 20%;
+  }
+  main #aboutUs .aboutUs-image img {
+    height: 250px;
+  }
+}
+@media (max-width: 375px) {
+  .child-header {
+    width: auto;
+  }
+  #services h2 {
+    font-size: 16px;
+  }
+  #services p {
+    font-size: 13px;
+  }
+}
+@media (max-width: 350px) {
+  header nav #site-title {
+    font-size: 2rem;
+  }
+  header nav #bars {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 330px) {
+  header nav {
+    flex-direction: column;
+  }
+  .header-content h1 {
+    font-size: 2rem;
+  }
+  .header-content p {
+    font-size: 1.5rem;
+  }
+
+  .header-content .search-container input {
+    width: 13rem;
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+  }
+  main #aboutUs .aboutUs-image img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 250px) {
+  .header-content h1 {
+    font-size: 1rem;
+  }
+  .header-content p {
+    font-size: 0.6rem;
+  }
+
+  .header-content .search-container input {
+    width: 4rem;
+    font-size: 0.6rem;
+  }
+  .about-title {
+    font-size: 1.2rem;
+  }
+  .about-title::after {
+    width: 30%;
+  }
+  main #aboutUs .aboutUs-text h3 {
+    font-size: 1.1rem;
+  }
+
+  main #aboutUs .aboutUs-text p {
+    font-size: 0.7rem;
+  }
+}
+/* End of media queries for Header styling */
