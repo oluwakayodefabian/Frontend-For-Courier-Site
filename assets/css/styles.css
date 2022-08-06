@@ -188,6 +188,10 @@
 .w-50 {
   width: 50vh;
 }
+
+.fully-transparent {
+  opacity: 0;
+}
 /* // Utilities */
 
 @font-face {
@@ -569,20 +573,20 @@ main #ourTeam {
   line-height: 1.5;
 }
 
-#testimonials .flex {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
+.owl-carousel .owl-item .flex {
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow-x: hidden !important;
 }
-#testimonials .flex figure,
-#testimonials .flex figure img {
-  width: 200px;
-  height: 200px;
+.owl-carousel .owl-item figure,
+.owl-carousel .owl-item img {
+  width: 200px !important;
+  height: 200px !important;
 }
-#testimonials .flex figure img {
-  border-radius: 50%;
-  border: 2px solid red;
+.owl-carousel .owl-item img {
+  border-radius: 50% !important;
+  border: 2px solid var(--primaryColor) !important;
 }
 
 main #contactUs {

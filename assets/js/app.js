@@ -52,3 +52,29 @@ $(".owl-carousel").owlCarousel({
     },
   },
 });
+
+const aboutUsSection = document.getElementById("aboutUs");
+const servicesSection = document.getElementById("services");
+
+const waypoint = new Waypoint({
+  element: aboutUsSection,
+  handler: function (direction) {
+    if (direction === "down") {
+      console.log(direction);
+      aboutUsSection.classList.remove("fully-transparent");
+      aboutUsSection.classList.add("animate__fadeInLeft");
+    }
+  },
+  offset: 150,
+});
+const waypoint2 = new Waypoint({
+  element: servicesSection,
+  handler: function (direction) {
+    if (direction === "down") {
+      console.log(direction);
+      servicesSection.classList.remove("fully-transparent");
+      servicesSection.classList.add("animate__lightSpeedInLeft");
+    }
+  },
+  offset: 100,
+});
